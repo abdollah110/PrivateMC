@@ -1,0 +1,18 @@
+Universe = vanilla
+Executable = runAnalysis_ExoHiggs_8b.sh 
+Arguments = $(seed) 500
+request_cpus = 2
+request_memory = 6000
+request_disk = 5GB
+requirements =  HasSingularity
+x509userproxy = /tmp/x509up_u4541 
+
+should_transfer_files = YES
+
+transfer_input_files = ExoHiggsTo8b_slc7_amd64_gcc10_CMSSW_12_4_8_tarball.tar.xz,fragment_8b.py
+
+Error = log/job_$(Cluster)-$(Process).err
+Output = log/job_$(Cluster)-$(Process).out
+Log = log/job_$(Cluster).log
+
+Queue seed from random_6_digit_numbers.txt
